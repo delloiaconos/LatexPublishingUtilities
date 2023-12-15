@@ -1,0 +1,39 @@
+%% BEGIN: utilities.tex
+% Author: Salvatore Dello Iacono
+% This is a series of common includes that I constanly use for publication.
+% You can load this file in your project and add it to the manuscript by using
+% \input{manuscript} befoer the document begin
+
+%% COMMANDS figref adn tabref
+\newcommand\tabref{Table~\ref}
+\newcommand\figref{Fig.~\ref}
+%\newcommand\figref{Figure~\ref}
+
+%% COMMANDS: revisions an temporary blocks
+\newcommand\rev{\textcolor{red}}
+\newcommand\tmp{\textcolor{blue}}
+\newenvironment{toremove}{\color{blue}}{}
+\newenvironment{notes}{\color{yellow}}{}
+\usepackage{comment}
+
+%% PACKAGES
+\usepackage{url}
+\usepackage[outdir=./]{epstopdf}
+\usepackage{siunitx}
+\usepackage{multirow}
+
+\usepackage{csquotes}
+\usepackage{hyphenat}
+
+%% BEGIN: To be removed before publishing
+\usepackage[switch]{lineno}
+\linenumbers
+% Use the following if you want to add a framebox to your manuscript.
+%\usepackage{atbegshi,picture}
+%\AtBeginShipout{\AtBeginShipoutUpperLeft{%
+%  \put(\dimexpr\paperwidth-1cm\relax,-1.5cm){\makebox[0pt][r]{\framebox{OLDPAPERNUMBER}}}%
+%}}
+%% END: To be removed before publishing
+
+
+%% END: utilities.tex
