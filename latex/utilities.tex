@@ -4,26 +4,57 @@
 % You can load this file in your project and add it to the manuscript by using
 % \input{manuscript} befoer the document begin
 
-%% COMMANDS figref adn tabref
-\newcommand\tabref{Table~\ref}
-\newcommand\figref{Fig.~\ref}
-%\newcommand\figref{Figure~\ref}
+%% COMMANDS: figref and tabref
+\newcommand{\tabref}{Table~\ref}
+\newcommand{\figref}{Figure~\ref}
 
-%% COMMANDS: revisions an temporary blocks
-\newcommand\rev{\textcolor{red}}
-\newcommand\tmp{\textcolor{blue}}
+
+%% COMMANDS: comments and temporary sections
+\usepackage{comment}
+
+\newcommand{\tmp}{\textcolor{blue}}
 \newenvironment{toremove}{\color{blue}}{}
 \newenvironment{notes}{\color{yellow}}{}
-\usepackage{comment}
+
+
+\usepackage{pdfcomment}
+\newcommand{\revnote}[2]{\pdfmargincomment[date=\today,author=#1,color=yellow]{#2}}
+
+%% COMMANDS: revisors changes
+\newcommand{\rev}{\textcolor{gray}}
+\newcommand{\revA}{\textcolor{red}}
+\newcommand{\revB}{\textcolor{blue}}
+\newcommand{\revC}{\textcolor{magenta}}
+\newcommand{\revD}{\textcolor{green}}
+\newcommand{\revE}{\textcolor{yellow}}
+
+
+%% COMMANDS: data management packages and commands
+\usepackage[useregional]{datetime2}
+\DTMusemodule{british}{en-GB}
+\newcommand{\prettydate}[1]{\DTMdate{#1}}
+\newcommand{\prettytime}[1]{\DTMtime{#1}}
+
 
 %% PACKAGES
 \usepackage{url}
-\usepackage[outdir=./]{epstopdf}
-\usepackage{siunitx}
-\usepackage{multirow}
+%\usepackage[outdir=./]{epstopdf}
 
 \usepackage{csquotes}
 \usepackage{hyphenat}
+\usepackage[super]{nth}
+\usepackage[version=4,arrows=pgf-filled,textfontname=sffamily,mathfontname=mathsf]{mhchem}
+
+
+%% PACKAGES: tables
+\usepackage{diagbox}
+\usepackage{multirow}
+
+
+%% PACKAGES: SI units and additional commands
+\usepackage[binary-units=true]{siunitx}
+\DeclareSIUnit{\sieuro}{\mbox{\texteuro}}
+
 
 %% BEGIN: To be removed before publishing
 \usepackage[switch]{lineno}
