@@ -10,15 +10,17 @@
 
 
 %% COMMANDS: comments and temporary sections
+\usepackage{csquotes}
 \usepackage{comment}
 
 \newcommand{\tmp}{\textcolor{blue}}
 \newenvironment{toremove}{\color{blue}}{}
 \newenvironment{notes}{\color{yellow}}{}
 
-
+% PDF Comments
 \usepackage{pdfcomment}
 \newcommand{\revnote}[2]{\pdfmargincomment[date=\today,author=#1,color=yellow]{#2}}
+\newcommand{\needrev}[3]{\kibitz{yellow!40!black}{#1}\pdfmargincomment[date=\today,author=#2,color=yellow]{#3}} % review note
 
 %% COMMANDS: revisors changes
 \newcommand{\rev}{\textcolor{gray}}
@@ -54,6 +56,18 @@
 %% PACKAGES: SI units and additional commands
 \usepackage[binary-units=true]{siunitx}
 \DeclareSIUnit{\sieuro}{\mbox{\texteuro}}
+
+
+% Custom commands
+\newcommand{\cdox}[1]{CO{\textsubscript{2}}}
+
+% Review - track changes
+\newcount\Comments  % 0 suppresses notes to selves in text
+\Comments = 1
+\newcommand{\kibitz}[2]{\ifnum\Comments=1{\color{#1}{#2}}\fi}
+\newcommand{\ma}[1]{\kibitz{blue}{#1}} % color for review Merlinda
+\newcommand{\map}[1]{\kibitz{red!60!black}{#1}} % color for review Marco
+\newcommand{\kau}[1]{\kibitz{green!40!black}{#1}} % color for review Kuang
 
 
 %% BEGIN: To be removed before publishing
