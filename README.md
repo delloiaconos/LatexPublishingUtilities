@@ -1,10 +1,16 @@
-# Latex Publishing Utilities
+# LaTeX Publishing Utilities
 
 Welcome to the __LaTeX Publishing Utilites__ repository! 
 Here is a collection of some LaTeX publishing utilities that I wrote during these years.
 It's a collection of templates and shell scripts, some of wich badly commented.
 
 Fell free to use it and to collaborate improving if you want.
+
+## Project Structure
+
+This project has a main directory ```latex``` containing all the LaTeX files I commonly use.
+
+In [commands](commands.md) I usually report all the commands I run organize my work and other tools. 
 
 # Related Projects
 If you're interested in additional LaTeX resources, you might also find these related projects useful:
@@ -26,4 +32,4 @@ Please follow the guidelines below:
 
 # License
 This repository is licensed under the GNU/GPL License v3.0. 
-See the LICENSE file for more details.
+See the [LICENSE](LICENSE.md) file for more details.
